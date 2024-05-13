@@ -64,7 +64,7 @@ android {
     }
 
     compose {
-        kotlinCompilerPlugin.set("1.5.2.1-rc01")
+        kotlinCompilerPlugin.set("1.5.11-kt-2.0.0-RC1")
     }
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
