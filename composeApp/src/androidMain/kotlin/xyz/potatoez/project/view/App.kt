@@ -1,6 +1,10 @@
+package xyz.potatoez.project.view
+
+import Greeting
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
@@ -14,7 +18,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import nckuppp.composeapp.generated.resources.Res
 import nckuppp.composeapp.generated.resources.compose_multiplatform
-
+import xyz.potatoez.project.callAPI.NetworkService
 
 
 @OptIn(ExperimentalResourceApi::class)
@@ -23,6 +27,10 @@ import nckuppp.composeapp.generated.resources.compose_multiplatform
 fun App() {
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
+
+        LaunchedEffect(Unit) {
+            println(NetworkService.callAPI("historySearch", mapOf("dept" to "F7")))
+        }
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Button(onClick = { showContent = !showContent }) {
                 Text("Click me!")

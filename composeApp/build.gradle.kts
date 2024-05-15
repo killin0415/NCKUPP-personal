@@ -20,6 +20,13 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.ktor.core)
+            implementation(libs.ktor.client.okhttp)
+            implementation(libs.ktor.client.cio)
+            implementation(libs.ktor.client.negotiation)
+            implementation(libs.kotlinx.json)
+            implementation(libs.kotlinx.compiler)
+
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -69,5 +76,8 @@ android {
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
     }
+}
+dependencies {
+    implementation("io.ktor:ktor-client-cio-jvm:2.3.11")
 }
 
